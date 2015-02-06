@@ -1,0 +1,52 @@
+public class recursion{
+
+    public int factorial(int n) {
+	if(n < 0) {
+	    return -1;
+	}
+	else if(n <= 1){
+	    return 1;
+	}
+	else{
+	    return n * factorial(n - 1);
+	}
+    }
+    
+    public int len(String s) {
+	if(s.equals("")) {
+	    return 0;
+	}
+	else {
+	    return 1 + len(s.substring(0,s.length() - 1));
+	}
+    }
+    
+    public int count(String s, char c) {
+	if(s.equals("")){
+	    return 0;
+	} else if(s.charAt(0) == c){
+	    return 1 + count(s.substring(1), c);
+	} else{
+	    return count(s.substring(1), c);
+	}
+    }
+    public int fibonacci(int n) {
+	if(n == 0){
+	    return 0;
+	}
+	else if(n == 1){
+	    return 1;
+	}
+	else{
+	    return fibonacci(n - 1) + fibonacci (n - 2);
+	}
+    }
+
+    
+    public static void main(String[] args){
+	recursion a = new recursion();
+	System.out.println(a.factorial(3));
+	System.out.println(a.len("Code"));
+	System.out.println(a.count("banana", 'a'));
+    }
+}
