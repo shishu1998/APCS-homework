@@ -59,5 +59,6 @@ public class recursion{
 	System.out.println(a.factorial(3));
 	System.out.println(a.len("Code"));
 	System.out.println(a.count("banana", 'a'));
+	System.out.println(a.bunnyEars2(5));
     }
 }
