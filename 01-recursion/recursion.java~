@@ -30,11 +30,35 @@ public class recursion{
 	    return count(s.substring(1), c);
 	}
     }
-    
+    public int fibonacci(int n) {
+	if(n == 0){
+	    return 0;
+	}
+	else if(n == 1){
+	    return 1;
+	}
+	else{
+	    return fibonacci(n - 1) + fibonacci (n - 2);
+	}
+    }
+
+    public int bunnyEars2(int bunnies) {
+	if(bunnies == 0){
+	    return 0;
+	}
+	else if(bunnies % 2 == 0){
+	    return 3 + bunnyEars2(bunnies - 1);
+	}
+	else{
+	    return 2 + bunnyEars2(bunnies - 1);
+	}
+    }
+
     public static void main(String[] args){
 	recursion a = new recursion();
 	System.out.println(a.factorial(3));
 	System.out.println(a.len("Code"));
 	System.out.println(a.count("banana", 'a'));
+	System.out.println(a.bunnyEars2(5));
     }
 }
