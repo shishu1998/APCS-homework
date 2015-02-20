@@ -3,7 +3,7 @@ import java.util.*;
 
 public class knights{
     private boolean done = false;
-    private int me = 1;
+    private int me = -2;
     private int visited = 1;
     private int[][] board;
 
@@ -54,14 +54,14 @@ public class knights{
     }
     
     public void tour(int x, int y){
-	if(!(board[x][y] == 0) || done){
+	if(board[x][y] == -1 || board[x][y] == me || board[x][y] > 0 || done){
 	    return;
 	}
 	if(check()){
 	    done = true;
 	    System.out.println(this);
 	}
-	//delay(100);
+	delay(100);
 	System.out.println(this);
 	board[x][y] = me;
         tour(x + 1, y + 2);
