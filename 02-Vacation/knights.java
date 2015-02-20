@@ -73,6 +73,7 @@ public class knights{
 	tour(x - 2, y + 1);
 	tour(x - 2, y - 1);
 	if(!done){
+	    //labeling doesn't work
 	    board[x][y] = visited;
 	    visited ++;
 	}

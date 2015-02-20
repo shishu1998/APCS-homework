@@ -4,7 +4,6 @@ import java.util.*;
 public class knights{
     private boolean done = false;
     private int me = -2;
-    private int moves = 0;
     private int visited = 1;
     private int[][] board;
 
@@ -55,7 +54,7 @@ public class knights{
     }
     
     public void tour(int x, int y){
-	if(board[x][y] == -1 || board[x][y] == me || board[x][y] == visited || done){
+	if(board[x][y] == -1 || board[x][y] == me || board[x][y] > 0 || done){
 	    return;
 	}
 	if(check()){
@@ -75,6 +74,7 @@ public class knights{
 	tour(x - 2, y - 1);
 	if(!done){
 	    board[x][y] = visited;
+	    visited ++;
 	}
     }
     
