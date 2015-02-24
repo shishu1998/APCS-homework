@@ -52,5 +52,7 @@ public class Lake{
 	Lake a = new Lake();
 	a.makelake(5,5,100,5);
 	System.out.println(a);
+	a.dig(3,3,5);
+	System.out.println(a);
     }
 }
