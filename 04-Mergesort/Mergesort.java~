@@ -6,11 +6,11 @@ public class Mergesort{
 	int too = 0;
 	ArrayList<Integer> nu = new ArrayList<Integer>();
 	while(juan < a.size() || too < b.size()){
-	    if(juan >= a.size() && too < b.size()){
+	    if(juan > a.size() || too < b.size()){
 		nu.add(b.get(too));
 		too ++;
 	    }
-	    else if(too >= b.size() && juan < a.size()){
+	    else if(too > b.size() || juan < a.size()){
 		nu.add(a.get(juan));
 		juan ++;
 	    }
