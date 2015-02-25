@@ -26,8 +26,8 @@ public class Lake{
     
     public String toString(){
 	String s = "";
-	for(int i = 0; i < lake.length; i ++){
-	    for(int b = 0;  b < lake[0].length; b ++){
+	for(int i = 1; i < lake.length - 1; i ++){
+	    for(int b = 1;  b < lake[0].length - 1; b ++){
 		s = s + lake[b][i] + " ";
 	    }
 	    s = s + "\n";
