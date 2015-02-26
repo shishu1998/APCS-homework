@@ -26,14 +26,37 @@ public class Mergesort{
 	return nu;
 
     }
+    public ArrayList<Integer> mergesort(ArrayList<Integer> a){
+	ArrayList<Integer> front = new ArrayList<Integer>();
+	ArrayList<Integer> back = new ArrayList<Integer>();
+	if(a.size() == 1){
+	    return a;
+	}
+	else{
+	    front = toarraylist(a.subList(0,a.size()/2));
+	    back = toarraylist(a.subList(a.size()/2, a.size()));
+	    return merge(mergesort(front),mergesort(back));
+	}
+
+    }
+    public ArrayList<Integer> toarraylist(List a){
+	ArrayList<Integer> output = new ArrayList<Integer>();
+	for(int i = 0; i < a.size() ; i ++){
+	    output.add((Integer)a.get(i));
+	}
+	return output;
+    }
 
     public static void main(String[] args){
 	Mergesort a = new Mergesort();
 	ArrayList<Integer> blah = new ArrayList<Integer>();
 	ArrayList<Integer> meh = new ArrayList<Integer>();
-	blah.add(5);
 	blah.add(6);
 	blah.add(7);
+	blah.add(5);
+	System.out.println(blah);
+	blah = a.mergesort(blah);
+	System.out.println(blah);
 	meh.add(1);
 	meh.add(2);
 	meh.add(3);
