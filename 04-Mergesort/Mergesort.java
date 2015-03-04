@@ -39,12 +39,64 @@ public class Mergesort{
 	}
 
     }
+
     public ArrayList<Integer> toarraylist(List a){
 	ArrayList<Integer> output = new ArrayList<Integer>();
 	for(int i = 0; i < a.size() ; i ++){
 	    output.add((Integer)a.get(i));
 	}
 	return output;
+    }
+
+    public int[] Mergesort(int[] a ){
+	if(a.length  == 1){
+	    return a;
+	}
+	else{
+	    int[] front = new int[a.length / 2];
+	    for(int i = 0; i < front.length ; i ++){
+		front[i] = a[i];
+	    }
+	    int[] back = new int[a.length - front.length];
+	    for(int i = 0; i < a.length - front.length; i ++){
+		back[i] = a[front.length + i];
+	    }
+	    return Merge(Mergesort(front),Mergesort(back));
+	}
+    }
+
+    public int[] Merge(int[] a, int [] b){
+	int[] result = new int[a.length + b.length];
+	int one = 0;
+	int two = 0;
+	while(one < a.length && two < b.length){
+	    if(a[one] < b[two]){
+		result[one + two] = a[one];
+		one ++;
+	    }
+	    else{
+		result[one + two] = b[two];
+		two ++;
+	    }
+	    
+	}
+	while(one < a.length){
+	    result[one + two] = a[one];
+	    one ++;
+	}
+	while(two < b.length){
+	    result[one + two] = b[two];
+	    two ++;
+	}
+	return result;
+
+    }
+    public String convert(int[] a){
+	String result = "";
+	for(int i = 0; i < a.length; i ++){
+	    result += a[i] + " ";
+	}
+	return result;
     }
 
     public static void main(String[] args){
@@ -64,6 +116,13 @@ public class Mergesort{
 	meh.add(5);
 	meh.add(6);
 	System.out.println(a.merge(blah,meh));
+	int[] ah = new int[10];
+	Random r = new Random();
+	for(int i = 0; i < ah.length; i ++){
+	    ah[i] = r.nextInt(10);
+	}
+	System.out.println(a.convert(ah));
+	System.out.println(a.convert(a.Mergesort(ah)));
 	
 	
     }
