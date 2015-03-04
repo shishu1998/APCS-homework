@@ -46,7 +46,6 @@ public class Mergesort{
 	}
 	return output;
     }
-
     public static void main(String[] args){
 	Mergesort a = new Mergesort();
 	ArrayList<Integer> blah = new ArrayList<Integer>();
