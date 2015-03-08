@@ -1,51 +1,43 @@
 public class selection{
-    public int[] select(int[] L, int S, int E){
-	int[] nu = new int[L.length];
-	int SI = S;
-	int EI = E;
-	int pivot;
-	for(int i = 0;i < SI; i ++){
-	    nu[i] = L[i];
-	}
-	for(int i = EI + 1; i < L.length; i ++){
-	    nu[i] = L[i];
-	}
-	pivot = L[SI];
-	SI ++;
-	int counter = SI;
-	while(SI != EI){
-	    if(L[counter] < pivot){
-		nu[SI] = L[SI];
-		SI ++;
-	    }
-	    else if(L[counter] > pivot){
-		nu[EI] = L[EI];
-		EI --;
-	    }
-	    counter ++;
-	}
-	nu[SI] = pivot;
-	return nu;
+    public int select(int[] A,int k, int s, int e){
+	int pivot = A[k];
+	int low = s;
+	int high = e;
+	int temp;
 	
+	A[k] = A[e];
+	A[e] = pivot;
+	
+	while(low < high){
+	    if(A[low] < pivot){
+		low ++;
+	    }
+	    else{
+		temp = A[low];
+		A[low] = A[high];
+		A[high] = temp;
+		high --;
+	    }
+	}
+	
+	A[e] = A[high];
+	A[high] = pivot;
+	
+	if(low == k){
+	    return A[low - 1];
+	}
+	else if(k > 1){
+	    return select(A,k,low,e);
+	}
+	else{
+	    return select(A,k,s,low);
+	}
     }
     
     public static void main(String[] args){
-	selection a = new selection();
-	int[] Arr = new int[10];
-	Arr[0] = 5;
-	Arr[1] = 4;
-	Arr[2] = 9;
-	Arr[3] = 3;
-	Arr[4] = 8;
-	Arr[5] = 7;
-	Arr[6] = 2;
-	Arr[7] = 6;
-	Arr[8] = 1;
-	Arr[9] = 10;
-	int[] arr = a.select(Arr,0,9);
-	for(int i = 0; i < arr.length ; i ++){
-	    System.out.println(arr[i]);
-	}
+	int[] arr = {8,9,4,5,3,2,1,6,7};
+	selection s = new selection();
+        System.out.println(s.select(arr,3,0,arr.length - 1));
     }
 
 
