@@ -26,7 +26,7 @@ public class selection{
 	if(low == k){
 	    return A[low - 1];
 	}
-	else if(k > 1){
+	else if(k > low){
 	    return select(A,k,low,e);
 	}
 	else{

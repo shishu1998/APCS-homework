@@ -102,7 +102,7 @@ public class Mergesort{
 
     public static void main(String[] args){
 	Mergesort a = new Mergesort();
-	ArrayList<Integer> blah = new ArrayList<Integer>();
+	/*ArrayList<Integer> blah = new ArrayList<Integer>();
 	ArrayList<Integer> meh = new ArrayList<Integer>();
 	blah.add(6);
 	blah.add(7);
@@ -117,13 +117,14 @@ public class Mergesort{
 	meh.add(5);
 	meh.add(6);
 	System.out.println(a.merge(blah,meh));
-	int[] ah = new int[10];
+	*/
+	int[] ah = new int[10000000];
 	Random r = new Random();
 	for(int i = 0; i < ah.length; i ++){
 	    ah[i] = r.nextInt(10);
 	}
-	System.out.println(a.convert(ah));
-	System.out.println(a.convert(a.Mergesort(ah)));
+	//System.out.println(a.convert(ah));
+	//System.out.println(a.convert(a.Mergesort(ah)));
 	
 	
     }
