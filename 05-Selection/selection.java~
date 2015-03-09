@@ -1,6 +1,45 @@
 public class selection{
-    public int select(int[] L, int SI, int EI){
+    public int select(int[] L,int k, int S, int E){
+	int SI = S;
+	int EI = E;
+	int pivot = L[k];
+	int temp;
+	
+	L[k] = L[E];
+	L[E] = pivot;
+	
+	while(SI < EI){
+	    if(L[SI] < pivot){
+		SI ++;
+	    }
+	    else{
+		EI --;
+		temp = L[SI];
+		L[SI] = L[EI];
+		L[EI] = temp;
+	    }
+	}
+	
+	L[E] = L[EI];
+	L[EI] = pivot;
+	
+	if(SI == k){
+	    return L[SI - 1];
+	}
+	else if(k > 1){
+	    return select(L,k,SI,E);
+	}
+	else{
+	    return select(L,k,S,SI);
+	}
+	
+	
+    }
     
+    public static void main(String[] args){
+	int[] arr = {8,9,4,5,3,2,1,6,7};
+	selection s = new selection();
+        System.out.println(s.select(arr,3,0,arr.length - 1));
     }
 
 
