@@ -75,12 +75,23 @@ public class Qsort{
 	return qselect(b,k,0,b.length-1);
     }
 
-    public void qsort(){
+    public void Qsort(){
 	for(int i = 0; i < a.length; i ++){
 	    qselect(a,i,0,a.length-1);
 	}
     }
-		
+      
+    public void qsort(int[]a,int l, int h){
+	if(l<h){
+	    int pi = partition(a,l,h);
+	    qsort(a, l, pi - 1);
+	    qsort(a, pi + 1,h);
+	}
+    }
+    public void qsort(){
+	qsort(a,0,a.length - 1);
+    }
+    
     public static void main(String[] args) {
 	Qsort q = new Qsort();
 	System.out.println(q);
@@ -92,6 +103,9 @@ public class Qsort{
 	q.qsort();
 				
 	System.out.println(q);
-
+	Qsort nu = new Qsort();
+	System.out.println(nu);
+	nu.Qsort();
+	System.out.println(nu);
     }
 }
