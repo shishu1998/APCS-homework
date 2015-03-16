@@ -95,11 +95,13 @@ public class Qsort{
     public static void main(String[] args) {
 	Qsort q = new Qsort();
 	System.out.println(q);
-	/*for (int i=0;i<5;i++) {
+	/*
+	for (int i=0;i<5;i++) {
 	    System.out.print(q.select(i)+" ");
 	}
 	System.out.println();
-	  Arrays.sort(q.a);*/
+	  Arrays.sort(q.a);
+	*/
 	q.qsort();
 				
 	System.out.println(q);
