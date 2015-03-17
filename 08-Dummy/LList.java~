@@ -2,9 +2,9 @@ public class LList{
     private Node l=null;
     private int length = 0;
     public void add(String s){
-	Node tmp = new Node(s);
-	tmp.setNext(l);
-	l = tmp;
+	Node dum = new Node();
+	dum.setNext(l);
+	l = new Node(s);
 	length ++;
     }
     public String toString(){
@@ -25,21 +25,16 @@ public class LList{
     }
     public void insert(int index, String s){
 	Node a = new Node(s);
-	if(index == 0){
-	    add(s);
+	Node before = l;
+	for(int i = 0; i < index;i ++){
+	    before = before.getNext();
 	}
-	else{
-	    Node before = l;
-	    for(int i = 0; i < index - 1;i ++){
-		before = before.getNext();
-	    }
-	    Node after = l;
-	    for(int i = 0; i < index; i ++){
-		after = after.getNext();
-	    }
-	    a.setNext(after);
-	    before.setNext(a);
+	Node after = l;
+	for(int i = 0; i < index + 1; i ++){
+	    after = after.getNext();
 	}
+	a.setNext(after);
+	before.setNext(a);
 	
     }
 }

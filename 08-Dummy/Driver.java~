@@ -9,10 +9,7 @@ public class Driver{
 	System.out.println(l);
 	l.insert(0,"Science");
 	System.out.println(l);
-	l.insert(3,"Magic");
-	System.out.println(l);
-	System.out.println(l.get(5));
-	l.remove(3);
+	l.insert(2,"Magic");
 	System.out.println(l);
     }
 }
