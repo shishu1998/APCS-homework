@@ -11,6 +11,9 @@ public class LList{
 	dum.setNext(l);
 	len ++;
     }
+    public int size(){
+	return len;
+    }
     public String toString(){
 	String s = "";
 	Node tmp;

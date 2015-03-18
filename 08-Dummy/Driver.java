@@ -1,19 +1,46 @@
+import java.io.*;
+import java.util.*;
 public class Driver{
     public static void main(String[] args) {
+	int sum;
+	long start,elapsed;
+	double diff;
 	LList l = new LList();
-	l.add(88);
-	l.add(99);
-	for (int i=0;i<5;i++){
+	for (int i=0;i<1000;i++){
 	    l.add(i);
 	}
-	System.out.println(l);
-	l.insert(0,100);
-	System.out.println(l);
-	l.insert(3,55);
-	System.out.println(l);
-	System.out.println(l.get(5));
-	System.out.println("" + l.remove(3));
-	System.out.println("" + l.remove(50));
-	System.out.println(l);
+        ArrayList<Integer> al = new ArrayList<Integer>();
+	for(int i = 0; i < 1000; i ++){
+	    al.add(i);
+	}
+	LinkedList<Integer> a = new LinkedList<Integer>();
+	for(int i = 0; i < 1000; i ++){
+	    a.add(i);
+	}
+	start = System.currentTimeMillis();
+	sum = 0;
+	for(int i = 0;i < l.size(); i ++){
+	    sum = sum + l.get(i);
+	}
+	System.out.println("" + sum);
+	elapsed = System.currentTimeMillis();
+
+	start = System.currentTimeMillis();
+	sum = 0;
+	for(int i = 0;i < al.size(); i ++){
+	    sum = sum + l.get(i);
+	}
+	System.out.println("" + sum);
+	elapsed = System.currentTimeMillis();
+
+	start = System.currentTimeMillis();
+	sum = 0;
+	for(int i = 0;i < a.size(); i ++){
+	    sum = sum + l.get(i);
+	}
+	elapsed = System.currentTimeMillis();
+	System.out.println("" + sum);
+
+	
     }
 }
