@@ -58,6 +58,7 @@ public class LList{
 	}
 	a.setNext(after);
 	before.setNext(a);
+	len++;
 	
     }
 }

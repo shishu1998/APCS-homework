@@ -6,15 +6,15 @@ public class Driver{
 	long start;
 	double diff;
 	LList l = new LList();
-	for (int i=0;i<10000;i++){
+	for (int i=0;i<100000;i++){
 	    l.add(i);
 	}
         ArrayList<Integer> al = new ArrayList<Integer>();
-	for(int i = 0; i < 10000; i ++){
+	for(int i = 0; i < 100000; i ++){
 	    al.add(i);
 	}
 	LinkedList<Integer> a = new LinkedList<Integer>();
-	for(int i = 0; i < 10000; i ++){
+	for(int i = 0; i < 100000; i ++){
 	    a.add(i);
 	}
 	start = System.currentTimeMillis();
@@ -28,7 +28,7 @@ public class Driver{
 	start = System.currentTimeMillis();
 	sum = 0;
 	for(int i = 0;i < al.size(); i ++){
-	    sum = sum + l.get(i);
+	    sum = sum + al.get(i);
 	}
 	System.out.println("" + sum);
 	System.out.println(System.currentTimeMillis()-start);
@@ -36,7 +36,7 @@ public class Driver{
 	start = System.currentTimeMillis();
 	sum = 0;
 	for(int i = 0;i < a.size(); i ++){
-	    sum = sum + l.get(i);
+	    sum = sum + a.get(i);
 	}
 	System.out.println("" + sum);
 	System.out.println(System.currentTimeMillis()-start);
