@@ -19,17 +19,6 @@ public class LList<E> implements Iterable<E>{
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
     }
-
-    public void remove(){
-	Iterator<E> temp = iterator();
-	Node<E> tmp = l.getNext();;
-	while(temp.hasNext()){
-	    tmp = tmp.getNext();
-	    temp.remove();
-	}
-	tmp = null;
-
-    }
 		
     public String toString(){
 	String s = "";
