@@ -19,8 +19,8 @@ public class LLit<E> implements Iterator<E>{
 
 		public void remove(){
 		    Node<E> temp = new Node<E>();
-		    Node<E> tmp = t;
 		    temp.setNext(t);
+		    Node<E> tmp = t;
 		    while(hasNext()){
 			temp = temp.getNext();
 			tmp = tmp.getNext();

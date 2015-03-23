@@ -19,6 +19,10 @@ public class LList<E> implements Iterable<E>{
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
     }
+    public void remove(){
+	iterator().remove();
+    }
+    
 		
     public String toString(){
 	String s = "";
