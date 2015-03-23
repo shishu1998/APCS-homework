@@ -13,7 +13,6 @@ public class LList<E> implements Iterable<E>{
 	return i;
     }
 		
-
 		
     public void add(E s){
 	Node<E> tmp = new Node<E>(s);
@@ -22,6 +21,13 @@ public class LList<E> implements Iterable<E>{
     }
 
     public void remove(){
+	Iterator<E> temp = iterator();
+	Node<E> tmp = l.getNext();;
+	while(temp.hasNext()){
+	    tmp = tmp.getNext();
+	    temp.remove();
+	}
+	tmp = null;
 
     }
 		

@@ -20,6 +20,8 @@ public class Driver{
 	l.add("else");
 
 	System.out.println(l);
+	l.remove();
+	System.out.println(l);
 
 	for (int i=0;i < 5; i++){
 	    l2.add(i);
