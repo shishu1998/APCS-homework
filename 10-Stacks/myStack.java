@@ -1,10 +1,12 @@
-public class myStack{
+import java.io.*;
+import java.util.*;
+public class myStack<E>{
     Node<E> l;
     // You decide how the node(s) are declared
 
     // make whatever constructor(s) you need
     public myStack(){
-	l = Node<E>();
+	l = new Node<E>();
     }
     public void push(E data){
         Node<E> temp = new Node<E>(data);
@@ -13,16 +15,28 @@ public class myStack{
     }
 
     public E pop(){
-        // remove and return the top item from the stack
+	E temp = l.getNext().getData();
+	l.setNext(l.getNext().getNext());
+        return temp;
     }
 
     public boolean empty(){
-
+	return l.getNext() == null;
     }
 
     public E top() {
-        // return the top item from the stack
+        return l.getNext().getData();
     }
+    public String toString(){
+	String result = "";
+	Node<E>temp = l.getNext();
+	while(temp != null){
+	    result = result + temp.getData() + "<---";
+	    temp = temp.getNext();
+	}
+	return result;
+    }
+    
 
 
 }
