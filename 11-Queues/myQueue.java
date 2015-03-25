@@ -10,7 +10,7 @@ public class myQueue<E>{
 
     public String toString(){
 	String result = "";
-	Node<E> temp = front;
+	Node<E> temp = front.getNext();
 	while(temp != back){
 	    temp = temp.getNext();
 	    result = result + temp.getData() + "--->";
@@ -34,6 +34,6 @@ public class myQueue<E>{
     }
 
     public E head() {
-        return front.getData();
+        return front.getNext().getData();
     }
 }
