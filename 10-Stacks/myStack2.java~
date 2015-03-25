@@ -1,0 +1,26 @@
+public class myStack2<E>{
+    private E[] Arr;
+    private int lastindex;
+    public myStack2(){
+	Arr = new E[100];
+	lastindex = -1;
+    }
+    public void grow(){
+	E[] temp = new E[Arr.length + 100];
+	for(int i = 0; i < Arr.length; i ++){
+	    temp[i] = Arr[i];
+	}
+	Arr = temp;
+    }
+    public void push(E data){
+	if(lastindex >= Arr.length){
+	    grow();
+	}
+	lastindex ++;
+	for(int i = lastindex;i > 0; i --){
+	    Arr[i] = Arr[i-1];
+	}
+	Arr[0] = data;
+    }
+
+}
