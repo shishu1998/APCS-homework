@@ -24,13 +24,14 @@ public class myQueue<E>{
 	back = temp;
     }
 
-    /*public E dequeue(){
-       
-        // remove and return the head/front item from the stack
-	}*/
+    public E dequeue(){
+	E result = front.getNext().getNext().getData();
+	front.setNext(front.getNext().getNext());
+	return result;
+    }
 
     public boolean empty(){
-	return front == null;
+	return front.getNext().getData() == null;
     }
 
     public E head() {
