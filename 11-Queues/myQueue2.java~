@@ -1,0 +1,10 @@
+public class myQueue2<E>{
+    private E[] arr;
+    private int size;
+    public myQueue2(){
+	size = 0;
+	arr = new E[100];
+    }
+
+
+}
