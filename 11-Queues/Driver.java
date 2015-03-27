@@ -1,6 +1,6 @@
 public class Driver{
     public static void main(String[] args){
-	/*myQueue<Integer> a = new myQueue<Integer>();
+	myQueue<Integer> a = new myQueue<Integer>();
 	System.out.println(a.empty());
 	a.enqueue(10);
 	a.enqueue(9);
@@ -10,8 +10,14 @@ public class Driver{
 	System.out.println(a.dequeue());
 	System.out.println(a);
 	System.out.println(a.dequeue());
-	System.out.println(a);*/
-	myQueue2<Integer> b = new myQueue2<Integer>();
+	System.out.println(a);
+	System.out.println(a.dequeue());
+	System.out.println(a);
+	System.out.println(a.dequeue());
+	System.out.println(a);
+	System.out.println(a.dequeue());
+	System.out.println(a);
+	/*myQueue2<Integer> b = new myQueue2<Integer>();
 	System.out.println(b.empty());
 	b.enqueue(10);
 	b.enqueue(9);
@@ -27,7 +33,7 @@ public class Driver{
 	System.out.println(b.dequeue());
 	System.out.println(b.dequeue());
 	System.out.println(b);
-	System.out.println(b.head());
+	System.out.println(b.head());*/
 	
     }
 }
