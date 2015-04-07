@@ -19,17 +19,27 @@ public class LList<E> implements Iterable<E>{
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
     }
-
     public void remove(){
+<<<<<<< HEAD
 	Iterator<E> temp = iterator();
-	Node<E> tmp = l.getNext();;
+	Iterator<E> tmp = iterator();
+        int i = 0;
 	while(temp.hasNext()){
-	    tmp = tmp.getNext();
+	    i ++;
 	    temp.remove();
 	}
-	tmp = null;
+	i --;
+	
+	for(int f = i; f > 0; f --){
+	    tmp.remove();
+	}
+	temp.next() = null;
 
+=======
+	iterator().remove();
+>>>>>>> origin/master
     }
+    
 		
     public String toString(){
 	String s = "";

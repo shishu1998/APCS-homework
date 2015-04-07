@@ -20,7 +20,6 @@ public class LList<E> implements Iterable<E>{
 	l.setNext(tmp);
     }
     public void remove(){
-<<<<<<< HEAD
 	Iterator<E> temp = iterator();
 	Iterator<E> tmp = iterator();
         int i = 0;
@@ -34,10 +33,7 @@ public class LList<E> implements Iterable<E>{
 	    tmp.remove();
 	}
 	temp.next() = null;
-
-=======
 	iterator().remove();
->>>>>>> origin/master
     }
     
 		
