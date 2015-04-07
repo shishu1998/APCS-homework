@@ -22,12 +22,18 @@ public class LList<E> implements Iterable<E>{
 
     public void remove(){
 	Iterator<E> temp = iterator();
-	Node<E> tmp = l.getNext();;
+	Iterator<E> tmp = iterator();
+        int i = 0;
 	while(temp.hasNext()){
-	    tmp = tmp.getNext();
+	    i ++;
 	    temp.remove();
 	}
-	tmp = null;
+	i --;
+	
+	for(int f = i; f > 0; f --){
+	    tmp.remove();
+	}
+	temp.next() = null;
 
     }
 		
