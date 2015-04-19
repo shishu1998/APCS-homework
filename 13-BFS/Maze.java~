@@ -14,7 +14,7 @@ public class Maze
     private char visited = '.';
     private boolean solved = false;
 
-    private Frontier2 f;
+    private Frontier f;
 		
     public void delay(int n){
 	try {
@@ -95,7 +95,7 @@ public class Maze
     public void addToFront(int tx,int ty, Node current){
 	Node tmp = null;
 	if (board[tx][ty]=='#' || board[tx][ty]=='$'){
-	    tmp = new Node(tx,ty,current.getSteps() + 1);
+	    tmp = new Node(tx,ty);
 	    tmp.setPrev(current);
 	    f.add(tmp);
 	}
@@ -106,7 +106,7 @@ public class Maze
 	//f = new Frontier();
 	f = new Frontier2();
 
-	f.add(new Node(x,y,0));
+	f.add(new Node(x,y));
 
 	int tx=0,ty=0;
 	Node current = null;
@@ -114,7 +114,6 @@ public class Maze
 	    current = f.remove();
 	    int cx = current.getX();
 	    int cy = current.getY();
-	    int csteps = current.getSteps();
 
 	    if (board[cx][cy]=='$')
 		break;

@@ -4,13 +4,12 @@ public class Node {
     private Node prev;
     private int priority;
     //private double priority;
-    private int steps = 0;
+    private int steps;
 		
-    public Node(int x, int y,int steps){
+    public Node(int x, int y){
 	this.x = x;
 	this.y = y;
 	priority = 26 -x + 18- y; 
-	this.steps = steps;
 	//priority = Math.sqrt((26-x) *(26-x) + (18-y) * (18-y));
     }
 
@@ -26,8 +25,8 @@ public class Node {
 	return priority + steps;
     }
 
-    public int getSteps(){
-	return steps;
+    public void setSteps(int n){
+	steps = n;
     }
     
     public void setPrev(Node n){
