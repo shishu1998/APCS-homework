@@ -133,7 +133,7 @@ public class Maze
 	// path recovery
 	for (Node p = current.getPrev(); p != null ; p = p.getPrev()){
 	    board[p.getX()][p.getY()] = 'P';
-	    delay(100);
+	    delay(300);
 	    System.out.println(this);
 	}
     }
