@@ -28,12 +28,12 @@ public class Tree{
 	Piggy.setRight(t);
 	boolean Right = false;
 	while(t != null){
-	    if(data < t.getLeft().getData()){
+	    if(data < Piggy.getLeft().getData()){
 		t = t.getLeft();
 		Piggy = Piggy.getLeft();
 		Right = false;
 	    }
-	    if(data > t.getRight().getData()){
+	    if(data > Piggy.getRight().getData()){
 		t = t.getRight();
 		Piggy = Piggy.getRight();
 		Right = true;
