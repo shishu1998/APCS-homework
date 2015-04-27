@@ -20,42 +20,64 @@ public class Tree{
 	return null;
     }
 
-    public void insert(Node i){
-	Node Piggy = new Node();
-	Node t = root;
-	int data = i.getData();
-	Piggy.setLeft(t);
-	Piggy.setRight(t);
-	boolean Right = false;
-	while(t != null){
-	    if(data < t.getLeft().getData()){
-		t = t.getLeft();
-		Piggy = Piggy.getLeft();
-		Right = false;
-	    }
-	    if(data > t.getRight().getData()){
-		t = t.getRight();
-		Piggy = Piggy.getRight();
-		Right = true;
-	    }
-	    
+    public Node rSearch(Node t,int i){
+	if(t == null || t.getData() == i){
+	    return t;
 	}
-	if(Right = true){
-	    Piggy.setRight(i);
+	else if(t.getData() < i){
+	    return rSearch(t.getRight(),i);
 	}
 	else{
-	    Piggy.setLeft(i);
+	    return rSearch(t.getLeft(),i);
 	}
+
     }
 
-    public String toString(){
+    public void insert(int i){
+	Node n = new Node(i);
+	Node t2=null;
 	Node t = root;
-	String output = "";
-	while(t != null){
-	    output = output + t.getData() + " ";
-	    t = t.getLeft();
+	if (root==null){
+	    root=n;
+	    return;
 	}
-	return output;
+	while (t!=null){
+	    t2 = t;
+	    if (t.getData()==i)
+		return;
+	    else if (t.getData() < i)
+		t=t.getRight();
+	    else if (t.getData() > i)
+		t=t.getLeft();
+	    else
+		return;
+	}
+	if (i>t2.getData())
+	    t2.setRight(n);
+	else
+	    t2.setLeft(n);
+    }
+
+
+    public String traverse(Node t){
+	String result = "";
+	result = result + t.getData() + " ";
+	if(t.getLeft() != null && t.getRight() != null){
+	    return result + traverse(t.getRight()) + traverse(t.getLeft());
+	}
+	else if(t.getRight() != null){
+	    return result + traverse(t.getRight());
+	}
+	else if(t.getLeft() != null){
+	    return result + traverse(t.getLeft());
+	}
+	else{
+	    return result;
+	}
+    }
+    
+    public String toString(){
+        return traverse(root);
     }
     
 }
