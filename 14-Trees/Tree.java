@@ -1,11 +1,14 @@
 public class Tree{
-    private Node root;
+    private Node r;
+    public Tree(){
+	this(null);
+    }
     public Tree(Node root){
-	this.root = root;
+	r = root;
     }
 
     public Node Search(int i){
-	Node t = root;
+	Node t = r;
 	while(t != null){
 	    if(t.getData() == i){
 		return t;
@@ -36,9 +39,9 @@ public class Tree{
     public void insert(int i){
 	Node n = new Node(i);
 	Node t2=null;
-	Node t = root;
-	if (root==null){
-	    root=n;
+	Node t = r;
+	if (r==null){
+	    r=n;
 	    return;
 	}
 	while (t!=null){
@@ -58,26 +61,16 @@ public class Tree{
 	    t2.setLeft(n);
     }
 
-
     public String traverse(Node t){
-	String result = "";
-	result = result + t.getData() + " ";
-	if(t.getLeft() != null && t.getRight() != null){
-	    return result + traverse(t.getRight()) + traverse(t.getLeft());
-	}
-	else if(t.getRight() != null){
-	    return result + traverse(t.getRight());
-	}
-	else if(t.getLeft() != null){
-	    return result + traverse(t.getLeft());
-	}
-	else{
-	    return result;
+	if(t == null){
+	    return "";
+	} else {
+	    return traverse(t.getLeft())+t.getData()+", "+traverse(t.getRight());
 	}
     }
     
     public String toString(){
-        return traverse(root);
+        return traverse(r);
     }
     
 }

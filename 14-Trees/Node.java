@@ -1,33 +1,12 @@
 public class Node{
-    private Node left, right;
     private int data;
-
-    public Node(){
-	left = null;
-	right = null;
-	data = 0;
-    }
-
-    public Node(int data){
-	this.data = data;
-    }
-
-    public Node(Node a, Node b, int i){
-	left = a;
-	right = b;
-	data = i;
-    }
-
+    private Node left,right;
     public void setLeft(Node n){
 	left = n;
     }
     public void setRight(Node n){
-	left = n;
+	right = n;
     }
-    public void setData(int i){
-	data = i;
-    }
-
     public Node getLeft(){
 	return left;
     }
@@ -36,5 +15,16 @@ public class Node{
     }
     public int getData(){
 	return data;
+    }
+    public String toString(){
+	return ""+data;
+    }
+    public Node(int n){
+	data = n;
+    }
+    public Node(int n,Node l, Node r){
+	data = n;
+	left = l;
+	right = r;
     }
 }

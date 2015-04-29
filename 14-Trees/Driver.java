@@ -1,7 +1,6 @@
 public class Driver{
     public static void main(String[] args){
-	Node rt = new Node(20);
-	Tree tree = new Tree(rt);
+	Tree tree = new Tree();
 	tree.insert(15);
 	tree.insert(19);
 	tree.insert(10);
