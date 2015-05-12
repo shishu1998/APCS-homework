@@ -6,9 +6,11 @@ public class Driver{
 	}
 	System.out.println(a);
 	System.out.println(a.maxValue(a.getRoot()));
-	a.getRoot().setRight(new Node(1));
+	a.getRoot().setLeft(new Node(1));
 	System.out.println(a);
 	a.splitDupes(a.getRoot());
 	System.out.println(a);
+	System.out.println(a.height(a.getRoot()));
+	System.out.println(a.longest(a.getRoot()));
     }
 }

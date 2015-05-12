@@ -3,10 +3,15 @@ public class Tree{
     public Tree(){
 	this(null);
     }
+    
     public Tree(Node root){
 	r = root;
     }
 
+    public Node getRoot(){
+	return r;
+    }
+    
     public Node Search(int i){
 	Node t = r;
 	while(t != null){
@@ -72,5 +77,29 @@ public class Tree{
     public String toString(){
         return traverse(r);
     }
-    
+
+    public int maxValue(Node t){
+	int max = t.getData();
+	if(t.getRight() == null){
+	    return max;
+	}
+	return maxValue(t.getRight());
+    }
+
+    public int height(Node t){
+	return 0;
+    }
+
+    public void splitDupes(Node t){
+	if(t.getRight() != null && t.getRight().getData() == t.getData()){
+	    Node temp = t.getRight();
+	    t.setRight(new Node(t.getData() + 1));
+	    t.getRight().setLeft(temp);
+	}
+	else if(t.getLeft() != null && t.getLeft().getData() == t.getData()){
+	    Node temp = t.getLeft();
+	    t.setLeft(new Node(t.getData() - 1));
+	    t.getLeft().setRight(temp);
+	}
+    }
 }

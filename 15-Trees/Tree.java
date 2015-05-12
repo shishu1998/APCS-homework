@@ -86,8 +86,50 @@ public class Tree{
 	return maxValue(t.getRight());
     }
 
-    public int height(Node t){
-	return 0;
+    public int height(Node t){    
+	if (t==null){
+	    return 0;
+	}
+	else {
+	    int heightleft = 1+height(t.getLeft());
+	    int heightright = 1+height(t.getRight());
+	    if (heightleft > heightright){
+		return heightleft;
+	    }
+	    else {
+		return heightright;
+	    }
+	}
+    }
+
+    public int longest(Node t){
+	if(t == null){
+	    return 0;
+	}
+	else{
+	    Node left = t.getLeft();
+	    Node Right = t.getRight();
+	    int longest = 0;
+	    while(left != null){
+		if(height(left.getLeft()) > height(left.getRight())){
+		    left = left.getLeft();
+		}
+		else{
+		    left = left.getRight();
+		}
+		longest ++;
+	    }
+	    while(Right != null){
+		if(height(Right.getLeft()) > height(Right.getRight())){
+		    Right = Right.getLeft();
+		}
+		else{
+		    Right = Right.getRight();
+		}
+		longest ++;
+	    }
+	    return longest;
+	}
     }
 
     public void splitDupes(Node t){
