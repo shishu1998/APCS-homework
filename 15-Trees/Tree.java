@@ -128,7 +128,7 @@ public class Tree{
 		}
 		longest ++;
 	    }
-	    return longest;
+	    return longest + 1;
 	}
     }
 
