@@ -1,3 +1,5 @@
+import java.io.*;
+import java.util.*;
 public class Tree{
     private Node r;
     public Tree(){
@@ -107,28 +109,10 @@ public class Tree{
 	    return 0;
 	}
 	else{
-	    Node left = t.getLeft();
-	    Node Right = t.getRight();
-	    int longest = 0;
-	    while(left != null){
-		if(height(left.getLeft()) > height(left.getRight())){
-		    left = left.getLeft();
-		}
-		else{
-		    left = left.getRight();
-		}
-		longest ++;
-	    }
-	    while(Right != null){
-		if(height(Right.getLeft()) > height(Right.getRight())){
-		    Right = Right.getLeft();
-		}
-		else{
-		    Right = Right.getRight();
-		}
-		longest ++;
-	    }
-	    return longest + 1;
+	    int pl = height(t.getLeft()) + height(t.getRight()) + 1;
+	    int pl2 = longest(t.getLeft());
+	    int pl3 = longest(t.getRight());
+	    return Math.max(pl,Math.max(pl2,pl3));
 	}
     }
 
